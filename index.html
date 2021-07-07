@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0'>
+    <title>Timer</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/features.js"></script>
+    <script src="./js/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="elements">
+            <p v-if="!videoSrc" class="info">Choose Video to Analyze</p>
+            <input @input="initVideo" type="file" name="file" id="fileItem" multiple>
+            <video v-show="videoSrc" :src="videoSrc" id="videoScreen" controls muted width="720" height="480"></video>
+        </div>
+        <div id="videoControls" v-show="videoSrc">
+            <button id="previousFrameBtn" @click="prevFrame">Previous Frame
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-2 w-2" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M8.445 14.832A1 1 0 0010 14v-2.798l5.445 3.63A1 1 0 0017 14V6a1 1 0 00-1.555-.832L10 8.798V6a1 1 0 00-1.555-.832l-6 4a1 1 0 000 1.664l6 4z" />
+              </svg> -->
+            </button>
+            <button id="nextFrameBtn" @click="nextFrame">Next Frame
+                <!-- <svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-2 w-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                        d="M4.555 5.168A1 1 0 003 6v8a1 1 0 001.555.832L10 11.202V14a1 1 0 001.555.832l6-4a1 1 0 000-1.664l-6-4A1 1 0 0010 6v2.798l-5.445-3.63z" />
+                </svg> -->
+            </button>
+        </div>
+        <div id="intervals" v-if="videoSrc">
+            <div>
+                <button @click="setStartTime" :style="startTime == 0 ? {'background': 'red'} : ''">Set Start
+                    Time</button>
+                <button @click="goToStartTime">Go To Start Time</button>
+                <!-- <p>{{ startTime }}</p> -->
+            </div>
+            <div id="answer" v-if="videoSrc">
+                <p>Calculated Time: {{ calculatedTime }}</p>
+            </div>
+            <div>
+                <button @click="setEndTime" :style="endTime == 0 ? {'background': 'red'} : ''">Set End Time</button>
+                <button @click="goToEndTime">Go To End Time</button>
+                <!-- <p>{{ endTime }}</p> -->
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js"></script>
+    <script>
+        app.mount("#app");
+    </script>
+</body>
+
+</html>
