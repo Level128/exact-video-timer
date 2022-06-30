@@ -1,12 +1,16 @@
 {
-  "name": "video_comparer",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "exact-video-timer",
+  "version": "0.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.12"
+  }
 }

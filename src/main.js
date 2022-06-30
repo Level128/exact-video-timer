@@ -1,3 +1,7 @@
+import { createApp } from 'vue'
+import App from './App.vue'
+
+
 const renderOptions = {
   data() {
     return {
@@ -75,7 +79,6 @@ const renderOptions = {
         return;
       }
       this.calculatedTime = temp.toFixed(2);
-
     },
     getCalcTimeStatus() {
       if (this.rawEndTime < this.rawStartTime) {
@@ -122,4 +125,5 @@ const renderOptions = {
     },
   },
 };
-const app = Vue.createApp(renderOptions);
+
+createApp(renderOptions).mount('#app')
