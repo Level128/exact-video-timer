@@ -14,6 +14,7 @@ const renderOptions = {
       videoSrc: null,
       videoFilename: null,
       isError: false,
+      count: 0,
     };
   },
   methods: {
@@ -73,7 +74,7 @@ const renderOptions = {
     calcTimeDifference() {
       // this.calculatedTime = (parseFloat(this.endTime) - parseFloat(this.startTime)).toFixed(2);
       // return;
-      temp = parseFloat(this.endTime) - parseFloat(this.startTime);
+      const temp = parseFloat(this.endTime) - parseFloat(this.startTime);
       if (temp < 0) {
         this.calculatedTime = "Error";
         return;
@@ -126,4 +127,5 @@ const renderOptions = {
   },
 };
 
-createApp(renderOptions).mount('#app')
+const app = createApp(App)
+app.mount("#app");

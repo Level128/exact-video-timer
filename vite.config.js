@@ -13,7 +13,7 @@ export default defineConfig({
   },
   server: {
     watch: {
-      ignored: ['node_modules', '!**/*.html', '!**/*.js', '!**/*.vue']
+      ignored: ['node_modules', '!**/*.html', '!**/*.js', '!**/*.vue', '!**/*.css']
     }
   },
 })
